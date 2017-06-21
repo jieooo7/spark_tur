@@ -1,0 +1,22 @@
+为不同网站应用各自的 SSH KEY
+在 ~/.ssh 目录下创建 config 文件：
+
+$ vim ~/.ssh/config
+输入以下信息：
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_a
+
+Host git.oschina.net
+    HostName git.oschina.net
+    User git
+    IdentityFile ~/.ssh/id_rsa_b
+
+...
+再把对应的公钥添加至对应的网站上面。
+
+注解：未加入配置文件的网站会自动应用id_rsa。
+
+至此，多个 SSH KEY 就可以同时使用了。
